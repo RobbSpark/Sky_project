@@ -15,3 +15,4 @@ class ProductLocators():
     PRODUCT_NAME = (By.CSS_SELECTOR, ".col-sm-6.product_main h1")
     MES_PRODUCT_ADDED = (By.CSS_SELECTOR, "#messages .alert:nth-child(1) strong")
     MES_BASKET_TOTAL = (By.CSS_SELECTOR, "#messages .alert:nth-child(3) strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert-success:nth-child(1)")

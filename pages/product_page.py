@@ -7,9 +7,9 @@ class ProductPage(BasePage):
     def add_product_to_basket(self):
         self.should_be_add_button()
         self.press_add_button()
-        BasePage.solve_quiz_and_get_code(self)
-        self.should_be_message_of_successful_add_to_basket()
-        self.should_be_message_of_basket_total()
+        #BasePage.solve_quiz_and_get_code(self)
+        #self.should_be_message_of_successful_add_to_basket()
+        #self.should_be_message_of_basket_total()
 
 
     def should_be_add_button(self):
@@ -23,3 +23,11 @@ class ProductPage(BasePage):
 
     def should_be_message_of_basket_total(self):
         assert self.browser.find_element(*ProductLocators.PRODUCT_PRICE).text == self.browser.find_element(*ProductLocators.MES_BASKET_TOTAL).text, "Product name does not match the added product"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def success_message_should_disappear(self):
+        assert self.is_disappeared(*ProductLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
